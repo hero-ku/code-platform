@@ -6,6 +6,10 @@ services:
       - go-mod-cache:/go/pkg/mod
       - go-build-cache:/root/.cache/go-build
 
+  queue:
+    image: rabbitmq:management-alpine
+    hostname: rabbitmq
+
 volumes:
   go-mod-cache:
   go-build-cache:
