@@ -1,7 +1,8 @@
 FROM golang:tip-alpine
 
-COPY src /src
-COPY go.mod /
-COPY go.sum /
+WORKDIR /usr/local/app
+
+COPY src ./src
+COPY go.mod go.sum ./
 
 CMD ["go", "run", "./src"]
