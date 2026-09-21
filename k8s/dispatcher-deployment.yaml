@@ -12,7 +12,17 @@ spec:
       labels:
         app: dispatcher
     spec:
+      serviceAccountName: dispatcher
       containers:
         - name: dispatcher
           image: dispatcher:latest
           imagePullPolicy: Never
+          volumeMounts:
+          - mountPath: /app/target
+            name: rust-target
+            readOnly: false
+      volumes:
+      - name: rust-target
+        hostPath:
+          path: /dispatcher/target
+          type: DirectoryOrCreate
