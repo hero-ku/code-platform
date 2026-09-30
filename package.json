@@ -1,0 +1,17 @@
+{
+  "name": "code-platform",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {},
+  "scripts": {
+    "site": "bun run -F ./site dev"
+  },
+  "workspaces": ["./site"]
+}
